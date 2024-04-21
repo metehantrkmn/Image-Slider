@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="wrapper">
+        <img
+          src="https://www.w3schools.com/w3css/img_snowtops.jpg"
+          alt="image"
+        />
+        <img src="https://www.w3schools.com/w3css/img_lights.jpg" alt="image" />
+        <img
+          src="https://www.w3schools.com/w3css/img_mountains.jpg"
+          alt="image"
+        />
+        <img src="https://www.w3schools.com/w3css/img_forest.jpg" alt="image" />
+        <img
+          src="https://www.w3schools.com/w3css/img_nature_wide.jpg"
+          alt="image"
+        />
+      </div>
+      <button id="arrow-right">
+        <img src="arrow-right.svg" alt="arrow-right image" />
+      </button>
+      <button id="arrow-left">
+        <img src="arrow-left.svg" alt="arrow-left image" />
+      </button>
+    </div>
+    <script>
+      numb = 0;
+      function scrollRight() {
+        var wrapper = document.getElementById("wrapper");
+        numb++;
+
+        if ((1 <= numb) & (numb <= 4)) {
+          wrapper.style.marginLeft = `calc(-100%*${numb})`; //-728px
+          console.log(`${numb}`);
+        } else if (numb > 4) {
+          numb = 0;
+          wrapper.style.marginLeft = `calc(-728px*${numb})`;
+          console.log(`${numb}`);
+        }
+        return numb;
+      }
+
+      function scrollLeft() {
+        var wrapper = document.getElementById("wrapper");
+        numb--;
+        if ((0 <= numb) & (numb <= 4)) {
+          wrapper.style.marginLeft = `calc(-728px*${numb})`;
+          console.log(`${numb}`);
+        } else if (numb < 0) {
+          numb = 4;
+          wrapper.style.marginLeft = `calc(-728px*${numb})`;
+          console.log(`${numb}`);
+        }
+        return numb;
+      }
+
+      const wrapper = document.getElementById("wrapper");
+      const buttonRight = document.getElementById("arrow-right");
+      const buttonLeft = document.getElementById("arrow-left");
+      buttonLeft.addEventListener("click", scrollLeft);
+      buttonRight.addEventListener("click", scrollRight);
+    </script>
+  </body>
+</html>

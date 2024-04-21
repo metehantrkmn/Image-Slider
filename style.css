@@ -1,0 +1,49 @@
+body {
+  box-sizing: border-box;
+  background-color: #5f5c5c;
+}
+
+.container {
+  width: 728px;
+  height: 510px;
+  overflow: hidden;
+  margin: 30% auto;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 1);
+}
+
+#wrapper {
+  width: calc(728px * 5);
+  height: 510px;
+  background-color: #252323f0;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 1);
+  transition-duration: 1s;
+}
+
+#wrapper img {
+  float: left;
+  width: 728px;
+  height: 100%;
+}
+
+#arrow-left {
+  position: relative;
+  bottom: 50%;
+  left: -6%;
+  background-color: #5f5c5c;
+}
+
+#arrow-right {
+  position: relative;
+  bottom: 50%;
+  left: 95%;
+  background-color: #5f5c5c;
+}
+
+#arrow-right:hover,
+#arrow-left:hover {
+  background-color: white;
+}
+
+.deneme {
+  margin-left: -728px;
+}
